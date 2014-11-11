@@ -5,7 +5,18 @@
     %title BigQuery Viewer
     %script{src: '//apis.google.com/js/client.js'}
     %script{src: '//code.jquery.com/jquery-2.1.1.min.js'}
+    %script{src: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'}
+    %script{src: '//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js'}
     %script{src: 'app.js'}
 
+    %link{rel: 'stylesheet', href: '//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css'}
+
   %body
-    %button#auth auth
+    #auth
+      %button auth
+    #container
+      %textarea#query{cols: 100, rows: 10}
+        SELECT * FROM [] LIMIT 1000
+      %button#run run
+      #information
+      %table#result.stripe.compact.hover.order-column

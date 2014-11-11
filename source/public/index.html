@@ -5,9 +5,20 @@
     <title>BigQuery Viewer</title>
     <script src='//apis.google.com/js/client.js'></script>
     <script src='//code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'></script>
+    <script src='//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js'></script>
     <script src='app.js'></script>
+    <link href='//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css' rel='stylesheet'>
   </head>
   <body>
-    <button id='auth'>auth</button>
+    <div id='auth'>
+      <button>auth</button>
+    </div>
+    <div id='container'>
+      <textarea cols='100' id='query' rows='10'>SELECT * FROM [] LIMIT 1000</textarea>
+      <button id='run'>run</button>
+      <div id='information'></div>
+      <table class='stripe compact hover order-column' id='result'></table>
+    </div>
   </body>
 </html>
